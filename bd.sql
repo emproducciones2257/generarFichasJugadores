@@ -1,0 +1,47 @@
+CREATE TABLE "TORNEOS"	(
+	"id_torneo"	INTEGER GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1) NOT NULL,
+	nombretorneo 	VARCHAR(80) NOT NULL,
+	edad		INTEGER NOT NULL,
+	datosextras	LONG VARCHAR,
+	CONSTRAINT pk_torneo PRIMARY KEY ("id_torneo"))
+;
+CREATE TABLE "DELEGADOS"  ( 
+	"id_delegado"	INTEGER GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1) NOT NULL,
+	"id_equipo"  	INTEGER NOT NULL,
+	"nombre"     	VARCHAR(75) NOT NULL,
+	"dni"        	VARCHAR(9) NOT NULL,
+	"localidad"  	VARCHAR(25) NOT NULL,
+	"telefono"   	VARCHAR(20) NOT NULL,
+	"fecha"		VARCHAR(11) NOT NULL,
+	CONSTRAINT "pk_delegado" PRIMARY KEY("id_delegado"))
+;
+CREATE TABLE "EQUIPOS"  ( 
+	"id_equipo"  	INTEGER GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1) NOT NULL,
+	"id_torneo"  	INTEGER NOT NULL,
+	"id_delegado"	INTEGER,
+	"nombre"     	VARCHAR(75) NOT NULL,
+	CONSTRAINT "pk_equipos" PRIMARY KEY("id_equipo"))
+;
+CREATE TABLE "JUGADORES"  ( 
+	"id_jugador"	INTEGER GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1) NOT NULL,
+	"id_equipo" 	INTEGER NOT NULL,
+	"nombre"    	VARCHAR(75) NOT NULL,
+	"dni"       	VARCHAR(9) NOT NULL,
+	"fecha"		VARCHAR(11) NOT NULL,
+	CONSTRAINT "pk_jugadores" PRIMARY KEY("id_jugador"))
+;
+ALTER TABLE "DELEGADOS"
+	ADD CONSTRAINT "fk_equipo_delegado"
+	FOREIGN KEY("id_equipo")
+	REFERENCES "EQUIPOS"("id_equipo") ON DELETE CASCADE
+;
+ALTER TABLE "EQUIPOS"
+	ADD CONSTRAINT "fk_torneos_equipos"
+	FOREIGN KEY("id_torneo")
+	REFERENCES "TORNEOS"("id_torneo") ON DELETE CASCADE
+;
+ALTER TABLE "JUGADORES"
+	ADD CONSTRAINT "fk_equipos_jugadores"
+	FOREIGN KEY("id_equipo")
+	REFERENCES "EQUIPOS"("id_equipo") ON DELETE CASCADE
+;

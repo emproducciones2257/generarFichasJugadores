@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><Diagram version="1.0" type="DERBY" versionMajor="10" versionMinor="11" groupSchema="false" hide_inv="false">
+<Table id="0" name="torneos" schema="" database="" background="16777165">
+<Column id="1" name="id_torneo" type="INTEGER" length="25" nulls="false"/>
+<Column id="2" name="nombreTorneo" type="VARCHAR" length="75" nulls="false"/>
+<Column id="3" name="datosExtras" type="VARCHAR" length="100" nulls="true"/>
+</Table>
+<Table id="4" name="delegados" schema="" database="" background="16777165">
+<Column id="5" name="id_delegado" type="INTEGER" length="25" nulls="false"/>
+<Column id="6" name="id_equipo" type="INTEGER" length="25" nulls="false"/>
+<Column id="7" name="nombre" type="VARCHAR" length="75" nulls="false"/>
+<Column id="8" name="dni" type="VARCHAR" length="9" nulls="false"/>
+<Column id="9" name="localidad" type="VARCHAR" length="25" nulls="false"/>
+<Column id="10" name="telefono" type="VARCHAR" length="10" nulls="true"/>
+</Table>
+<Table id="11" name="jugadores" schema="" database="" background="16777165">
+<Column id="12" name="id_jugador" type="INTEGER" length="25" nulls="false"/>
+<Column id="13" name="id_equipo" type="INTEGER" length="25" nulls="false"/>
+<Column id="14" name="nombre" type="VARCHAR" length="75" nulls="false"/>
+<Column id="15" name="dni" type="VARCHAR" length="9" nulls="false"/>
+</Table>
+<Table id="16" name="equipos" schema="" database="" background="16777165">
+<Column id="17" name="id_equipo" type="INTEGER" length="25" nulls="false"/>
+<Column id="18" name="id_torneo" type="INTEGER" length="25" nulls="false"/>
+<Column id="19" name="id_delegado" type="INTEGER" length="25" nulls="true"/>
+<Column id="20" name="nombre" type="VARCHAR" length="40" nulls="false"/>
+</Table>
+<Relation id="21" name="fk_torneos_equipos" cardinality="-2" identifying="true" nulls="false">
+<FK>1</FK>
+<PK>18</PK>
+</Relation>
+<Relation id="22" name="fk_equipo_delegado" cardinality="1" identifying="true" nulls="false">
+<FK>17</FK>
+<PK>6</PK>
+<Text/>
+</Relation>
+<Relation id="23" name="REL_1" cardinality="-2" identifying="true" nulls="false">
+<FK>17</FK>
+<PK>13</PK>
+</Relation>
+<Constraint table="0" name="pk_torneos" type="PrimKey">
+<ConstraintColumn id="1"/>
+</Constraint>
+<Constraint table="4" name="pk_delegado" type="PrimKey">
+<ConstraintColumn id="5"/>
+</Constraint>
+<Constraint table="11" name="pk_jugadores" type="PrimKey">
+<ConstraintColumn id="12"/>
+</Constraint>
+<Constraint table="16" name="pk_equipos" type="PrimKey">
+<ConstraintColumn id="17"/>
+</Constraint>
+<Sheet name="Sin título 1" id="24" disp_at="true" disp_ph="true" disp_co="true" disp_rn="true" disp_null="true">
+<Place id="21" visible="true">500,0,0,0</Place>
+<Place id="4" visible="true">530,30,221,131</Place>
+<Place id="11" visible="true">570,260,221,101</Place>
+<Place id="23" visible="true">500,0,0,0</Place>
+<Place id="22" visible="true" options="190.0,210.0,211.0,111.0,530.0,30.0,221.0,131.0,3,401.0,220.0,620.0,220.0,620.0,161.0">467,6,0,0</Place>
+<Place id="16" visible="true">190,210,211,111</Place>
+<Place id="0" visible="true">70,20,191,91</Place>
+</Sheet>
+<Settings sheet="24" zoom="1.0"/>
+</Diagram>

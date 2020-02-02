@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Fri Nov 29 19:56:35 ART 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-016e-b961-582e-00000717a5d8 
+on database directory C:\Users\Emanuel\Documents\NetBeansProjects\fichasEquipos Ver 8.2\bdJugadores with class loader sun.misc.Launcher$AppClassLoader@73d16e93 
+Loaded from file:/C:/Users/Emanuel/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_211-b12
+user.dir=C:\Users\Emanuel\Documents\NetBeansProjects\fichasEquipos Ver 8.2
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

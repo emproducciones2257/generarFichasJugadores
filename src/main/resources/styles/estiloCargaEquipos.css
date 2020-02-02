@@ -1,0 +1,28 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10/10/2019, 15:40:53
+    Author     : Emanuel
+*/
+
+.estiloDelegado {
+    -fx-border-color: black;
+    -fx-border-radius:10;
+    
+}
+
+.bordered-titled-title { 
+    -fx-translate-x: 8; 
+    -fx-translate-y: -10; 
+    -fx-padding: 0 0 0 4; 
+    -fx-background-color: -fx-background; 
+}
+
+.estiloRojo { 
+    -fx-font-weight: bold;
+    -fx-text-fill: #e10f0f;  
+} 
+
